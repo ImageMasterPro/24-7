@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/7 YouTube Streaming Solution</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+        .step-container {
+            position: relative;
+        }
+        .tutorial-img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h1 class="text-3xl font-bold text-center text-blue-600">24/7 YouTube Streaming Solution</h1>
+            <p class="text-center text-gray-600 mt-2">A complete solution for streaming videos to YouTube 24/7 automatically from the cloud</p>
+        </header>
+
+        <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Overview</h2>
+            <p class="mb-4">This application provides everything you need to set up a 24/7 YouTube streaming service that runs in the cloud. Your computer doesn't need to stay on as the streaming will happen from a cloud server.</p>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                <p class="font-bold">How It Works:</p>
+                <ol class="list-decimal ml-6 mt-2">
+                    <li>You upload your videos to cloud storage (like Google Drive or Dropbox)</li>
+                    <li>A cloud server runs 24/7 and streams these videos to YouTube</li>
+                    <li>You control what videos play and the order using this web interface</li>
+                    <li>The stream continues even when your computer is off</li>
+                </ol>
+            </div>
+            
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4">
+                <p class="font-bold">Prerequisites:</p>
+                <ul class="list-disc ml-6 mt-2">
+                    <li>A YouTube channel with live streaming enabled</li>
+                    <li>A GitHub account (for hosting this control panel)</li>
+                    <li>Basic knowledge of following technical instructions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="border-b border-gray-200">
+                <nav class="flex flex-wrap">
+                    <button class="tab-btn px-6 py-3 w-full sm:w-auto text-center bg-blue-500 text-white font-medium" data-tab="setup">
+                        <i class="fas fa-cog mr-2"></i>Initial Setup
+                    </button>
+                    <button class="tab-btn px-6 py-3 w-full sm:w-auto text-center bg-gray-100 text-gray-800 font-medium" data-tab="cloud">
+                        <i class="fas fa-cloud mr-2"></i>Cloud Server
+                    </button>
+                    <button class="tab-btn px-6 py-3 w-full sm:w-auto text-center bg-gray-100 text-gray-800 font-medium" data-tab="youtube">
+                        <i class="fab fa-youtube mr-2"></i>YouTube Config
+                    </button>
+                    <button class="tab-btn px-6 py-3 w-full sm:w-auto text-center bg-gray-100 text-gray-800 font-medium" data-tab="control">
+                        <i class="fas fa-sliders-h mr-2"></i>Control Panel
+                    </button>
+                    <button class="tab-btn px-6 py-3 w-full sm:w-auto text-center bg-gray-100 text-gray-800 font-medium" data-tab="code">
+                        <i class="fas fa-code mr-2"></i>Server Code
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Initial Setup Tab -->
+            <div id="setup" class="tab-content active p-6">
+                <h2 class="text-2xl font-bold mb-4">Initial Setup Guide</h2>
+                <p class="mb-4">Follow these steps to set up your 24/7 YouTube streaming solution:</p>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 1: Create a GitHub Repository</h3>
+                    <p class="mb-2">First, you'll need to create a GitHub repository to host this control panel:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Go to <a href="https://github.com/new" class="text-blue-500 hover:underline" target="_blank">https://github.com/new</a></li>
+                        <li>Name your repository (e.g., "youtube-24-7-streamer")</li>
+                        <li>Make it public</li>
+                        <li>Click "Create repository"</li>
+                    </ol>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 2: Upload This HTML File</h3>
+                    <p class="mb-2">Upload this HTML file to your GitHub repository:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Rename this file to <code>index.html</code></li>
+                        <li>Go to your GitHub repository</li>
+                        <li>Click "Add file" > "Upload files"</li>
+                        <li>Drag and drop the renamed file</li>
+                        <li>Click "Commit changes"</li>
+                    </ol>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 3: Enable GitHub Pages</h3>
+                    <p class="mb-2">Make your control panel accessible online:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Go to your repository's "Settings"</li>
+                        <li>Scroll down to "GitHub Pages" section</li>
+                        <li>Under "Source", select "main" branch</li>
+                        <li>Click "Save"</li>
+                        <li>Wait a few minutes for the site to deploy</li>
+                        <li>You'll get a URL like <code>https://yourusername.github.io/youtube-24-7-streamer/</code></li>
+                    </ol>
+                </div>
+                
+                <div class="mt-6">
+                    <p class="mb-4">After completing these steps, continue to the "Cloud Server" tab to set up your streaming server.</p>
+                    <button onclick="changeTab('cloud')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        Next: Set Up Cloud Server <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cloud Server Tab -->
+            <div id="cloud" class="tab-content p-6">
+                <h2 class="text-2xl font-bold mb-4">Setting Up a Free Cloud Server</h2>
+                <p class="mb-4">We'll use Oracle Cloud Free Tier for our 24/7 streaming server. Oracle Cloud provides 2 free virtual machines that never expire.</p>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 1: Create an Oracle Cloud Account</h3>
+                    <p class="mb-2">Sign up for Oracle Cloud Free Tier:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Go to <a href="https://www.oracle.com/cloud/free/" class="text-blue-500 hover:underline" target="_blank">https://www.oracle.com/cloud/free/</a></li>
+                        <li>Click "Start for free"</li>
+                        <li>Complete the registration process (you'll need a credit card for verification, but won't be charged)</li>
+                    </ol>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 2: Create a Virtual Machine</h3>
+                    <p class="mb-2">Create a Linux virtual machine:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Sign in to your Oracle Cloud account</li>
+                        <li>Go to the dashboard and click "Create a VM instance"</li>
+                        <li>Name your instance (e.g., "youtube-streamer")</li>
+                        <li>Use the default "Oracle Linux 8" image</li>
+                        <li>Select "Always Free Eligible" resources</li>
+                        <li>Create or upload an SSH key (save the private key to your computer)</li>
+                        <li>Click "Create"</li>
+                    </ol>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 3: Configure Networking</h3>
+                    <p class="mb-2">Make sure your VM is accessible:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Go to your VM's details</li>
+                        <li>Under "Primary VNIC", click on your Virtual Cloud Network</li>
+                        <li>Click on your subnet</li>
+                        <li>Click "Security Lists" and then on the default security list</li>
+                        <li>Click "Add Ingress Rules"</li>
+                        <li>Add a rule allowing TCP traffic on port 22 (SSH) from anywhere (0.0.0.0/0)</li>
+                        <li>Add another rule allowing TCP traffic on port 80 (HTTP) from anywhere</li>
+                        <li>Click "Add Ingress Rules"</li>
+                    </ol>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 4: Connect to Your VM</h3>
+                    <p class="mb-2">Connect to your VM using SSH:</p>
+                    <p class="mb-2">For Windows:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Use PuTTY or Windows Terminal</li>
+                        <li>Connect using the private key you saved earlier</li>
+                        <li>Username: <code>opc</code></li>
+                        <li>IP address: Found on your VM's details page</li>
+                    </ol>
+                    <p class="mb-2">For Mac/Linux:</p>
+                    <pre class="mb-4">ssh -i /path/to/private_key opc@YOUR_VM_IP_ADDRESS</pre>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 5: Install Required Software</h3>
+                    <p class="mb-2">Install FFmpeg and other required software:</p>
+                    <pre class="mb-4">sudo dnf update -y
+sudo dnf install epel-release -y
+sudo dnf install ffmpeg -y
+sudo dnf install wget nano git unzip -y
+sudo dnf install nodejs npm -y</pre>
+                </div>
+                
+                <div class="mt-6">
+                    <p class="mb-4">After setting up your cloud server, proceed to configure your YouTube stream.</p>
+                    <button onclick="changeTab('youtube')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        Next: YouTube Configuration <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- YouTube Config Tab -->
+            <div id="youtube" class="tab-content p-6">
+                <h2 class="text-2xl font-bold mb-4">YouTube Streaming Configuration</h2>
+                <p class="mb-4">Now you need to configure YouTube to accept your 24/7 stream.</p>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 1: Enable Live Streaming on YouTube</h3>
+                    <p class="mb-2">Make sure your YouTube channel has live streaming enabled:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Go to <a href="https://www.youtube.com/features" class="text-blue-500 hover:underline" target="_blank">https://www.youtube.com/features</a></li>
+                        <li>Verify your account if prompted</li>
+                        <li>Wait 24 hours for live streaming to be enabled (for new accounts)</li>
+                    </ol>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 2: Get Your Stream Key</h3>
+                    <p class="mb-2">Obtain your YouTube stream key:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>Go to <a href="https://www.youtube.com/live_dashboard" class="text-blue-500 hover:underline" target="_blank">https://www.youtube.com/live_dashboard</a></li>
+                        <li>Click on "Stream" in the left menu</li>
+                        <li>Scroll down to find your "Stream key" (click "Reveal" to see it)</li>
+                        <li>Copy this key - you'll need it for your streaming server</li>
+                        <li>Also note your "Stream URL" (usually rtmp://a.rtmp.youtube.com/live2)</li>
+                    </ol>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mt-4">
+                        <p class="font-bold">Important: Keep your stream key private!</p>
+                        <p>Anyone with your stream key can stream to your YouTube channel. Never share it publicly.</p>
+                    </div>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 3: Configure Your Stream Settings</h3>
+                    <p class="mb-2">Configure your stream settings on YouTube:</p>
+                    <ol class="list-decimal ml-6 mb-4">
+                        <li>On the Stream dashboard, set a title and description for your stream</li>
+                        <li>Set visibility (Public, Unlisted, or Private)</li>
+                        <li>Choose a category</li>
+                        <li>Configure other settings like chat, monetization, etc.</li>
+                        <li>Click "Create Stream" to save these settings</li>
+                    </ol>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">YouTube Streaming Requirements</h3>
+                    <p class="mb-2">Your stream must meet YouTube's minimum requirements:</p>
+                    <ul class="list-disc ml-6 mb-4">
+                        <li><strong>Video codec:</strong> H.264</li>
+                        <li><strong>Audio codec:</strong> AAC</li>
+                        <li><strong>Minimum resolution:</strong> 720p (1280x720)</li>
+                        <li><strong>Recommended bitrate:</strong> 3-6 Mbps</li>
+                        <li><strong>Framerate:</strong> 30 fps</li>
+                        <li><strong>Keyframe interval:</strong> 2 seconds</li>
+                    </ul>
+                    <p>Our streaming server will be configured to meet these requirements.</p>
+                </div>
+                
+                <div class="mt-6">
+                    <p class="mb-4">After configuring YouTube, let's set up the control panel for managing your stream.</p>
+                    <button onclick="changeTab('control')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        Next: Control Panel <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Control Panel Tab -->
+            <div id="control" class="tab-content p-6">
+                <h2 class="text-2xl font-bold mb-4">Stream Control Panel</h2>
+                <p class="mb-4">This is your control panel for managing videos and controlling your 24/7 stream.</p>
+                
+                <div class="bg-white shadow-md rounded-lg p-4 mb-6">
+                    <h3 class="text-lg font-bold mb-3">Stream Status</h3>
+                    <div class="flex items-center mb-3">
+                        <div id="stream-status-indicator" class="w-4 h-4 rounded-full bg-red-500 mr-2"></div>
+                        <span id="stream-status">Not connected</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <button id="start-stream-btn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                            <i class="fas fa-play mr-2"></i>Start Stream
+                        </button>
+                        <button id="stop-stream-btn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" disabled>
+                            <i class="fas fa-stop mr-2"></i>Stop Stream
+                        </button>
+                        <button id="check-status-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                            <i class="fas fa-sync-alt mr-2"></i>Check Status
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white shadow-md rounded-lg p-4 mb-6">
+                    <h3 class="text-lg font-bold mb-3">Server Configuration</h3>
+                    <form id="config-form" class="space-y-4">
+                        <div>
+                            <label for="server-ip" class="block text-sm font-medium text-gray-700 mb-1">Server IP Address</label>
+                            <input type="text" id="server-ip" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 123.456.789.123">
+                        </div>
+                        <div>
+                            <label for="api-key" class="block text-sm font-medium text-gray-700 mb-1">API Key</label>
+                            <input type="text" id="api-key" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your server API key">
+                        </div>
+                        <div>
+                            <label for="youtube-key" class="block text-sm font-medium text-gray-700 mb-1">YouTube Stream Key</label>
+                            <input type="password" id="youtube-key" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your YouTube stream key">
+                            <p class="text-sm text-gray-500 mt-1">This key is stored locally in your browser and not shared.</p>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                <i class="fas fa-save mr-2"></i>Save Configuration
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="bg-white shadow-md rounded-lg p-4 mb-6">
+                    <h3 class="text-lg font-bold mb-3">Video Playlist</h3>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
+                        <p>Videos will loop in the order shown below. Upload your videos to a cloud storage service and add the direct download links.</p>
+                    </div>
+                    <div class="mb-4">
+                        <form id="add-video-form" class="flex flex-col sm:flex-row gap-2">
+                            <input type="text" id="video-name" class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Video Title">
+                            <input type="url" id="video-url" class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Direct Video URL">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                <i class="fas fa-plus mr-2"></i>Add
+                            </button>
+                        </form>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Video</th>
+                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">URL</th>
+                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="video-list">
+                                <tr>
+                                    <td colspan="3" class="py-4 px-6 border-b border-gray-200 text-center">No videos added yet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <p class="mb-4">Next, let's set up the server code that will actually run on your cloud server.</p>
+                    <button onclick="changeTab('code')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        Next: Server Code <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Server Code Tab -->
+            <div id="code" class="tab-content p-6">
+                <h2 class="text-2xl font-bold mb-4">Server Code Installation</h2>
+                <p class="mb-4">Follow these steps to install and configure the streaming server code on your Oracle Cloud VM.</p>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 1: Create the Project Directory</h3>
+                    <p class="mb-2">Connect to your VM via SSH and run these commands:</p>
+                    <div class="relative">
+                        <pre class="mb-4">mkdir -p ~/youtube-streamer
+cd ~/youtube-streamer</pre>
+                        <button class="copy-btn bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-2 rounded" data-copy="mkdir -p ~/youtube-streamer
+cd ~/youtube-streamer"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 2: Create the Server Files</h3>
+                    <p class="mb-2">Create the main server file:</p>
+                    <p class="text-sm font-medium mb-1">Run: <code>nano server.js</code></p>
+                    <div class="relative">
+                        <pre class="mb-4">const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const { spawn } = require('child_process');
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
+
+// Configuration
+const PORT = 3000;
+const API_KEY = 'change-this-to-a-random-string'; // Change this to a secure random string
+let YOUTUBE_STREAM_KEY = '';
+let streamProcess = null;
+let isStreaming = false;
+let playlist = [];
+let currentVideoIndex = 0;
+
+// Load saved configuration and playlist
+function loadConfig() {
+  try {
+    if (fs.existsSync('./config.json')) {
+      const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+      YOUTUBE_STREAM_KEY = config.youtubeKey || '';
+      playlist = config.playlist || [];
+    }
+  } catch (err) {
+    console.error('Error loading config:', err);
+  }
+}
+
+// Save configuration and playlist
+function saveConfig() {
+  try {
+    fs.writeFileSync('./config.json', JSON.stringify({
+      youtubeKey: YOUTUBE_STREAM_KEY,
+      playlist: playlist
+    }, null, 2));
+  } catch (err) {
+    console.error('Error saving config:', err);
+  }
+}
+
+// Function to start the stream
+async function startStream() {
+  if (isStreaming || !playlist.length) {
+    return { success: false, message: isStreaming ? 'Stream already running' : 'No videos in playlist' };
+  }
+
+  try {
+    // Create temp directory if it doesn't exist
+    if (!fs.existsSync('./temp')) {
+      fs.mkdirSync('./temp');
+    }
+
+    // Start stream process
+    console.log('Starting stream with YouTube key:', YOUTUBE_STREAM_KEY.substring(0, 3) + '***');
+    
+    // Prepare for streaming
+    isStreaming = true;
+    currentVideoIndex = 0;
+    streamNextVideo();
+    
+    return { success: true, message: 'Stream started' };
+  } catch (err) {
+    console.error('Error starting stream:', err);
+    isStreaming = false;
+    return { success: false, message: 'Error starting stream: ' + err.message };
+  }
+}
+
+// Function to stream the next video
+async function streamNextVideo() {
+  if (!isStreaming || !playlist.length) return;
+  
+  const video = playlist[currentVideoIndex];
+  console.log(`Streaming video ${currentVideoIndex + 1}/${playlist.length}: ${video.name}`);
+  
+  // Download the video if it doesn't exist locally
+  const videoFilename = path.join('./temp', `video_${currentVideoIndex}.mp4`);
+  if (!fs.existsSync(videoFilename)) {
+    console.log(`Downloading ${video.url} to ${videoFilename}`);
+    try {
+      await exec(`wget -O "${videoFilename}" "${video.url}"`);
+    } catch (err) {
+      console.error('Error downloading video:', err);
+      // Move to next video
+      currentVideoIndex = (currentVideoIndex + 1) % playlist.length;
+      streamNextVideo();
+      return;
+    }
+  }
+  
+  // Stream the video to YouTube
+  const ffmpegArgs = [
+    '-re',
+    '-i', videoFilename,
+    '-c:v', 'libx264',
+    '-preset', 'veryfast',
+    '-b:v', '3000k',
+    '-maxrate', '3000k',
+    '-bufsize', '6000k',
+    '-pix_fmt', 'yuv420p',
+    '-g', '50',
+    '-c:a', 'aac',
+    '-b:a', '128k',
+    '-ar', '44100',
+    '-f', 'flv',
+    `rtmp://a.rtmp.youtube.com/live2/${YOUTUBE_STREAM_KEY}`
+  ];
+  
+  streamProcess = spawn('ffmpeg', ffmpegArgs);
+  
+  streamProcess.stdout.on('data', (data) => {
+    console.log(`ffmpeg stdout: ${data}`);
+  });
+  
+  streamProcess.stderr.on('data', (data) => {
+    console.log(`ffmpeg stderr: ${data}`);
+  });
+  
+  streamProcess.on('close', (code) => {
+    console.log(`ffmpeg process closed with code ${code}`);
+    if (isStreaming) {
+      // Move to next video
+      currentVideoIndex = (currentVideoIndex + 1) % playlist.length;
+      streamNextVideo();
+    }
+  });
+}
+
+// Function to stop the stream
+function stopStream() {
+  if (!isStreaming) {
+    return { success: false, message: 'Stream not running' };
+  }
+  
+  if (streamProcess) {
+    streamProcess.kill('SIGTERM');
+    streamProcess = null;
+  }
+  
+  isStreaming = false;
+  return { success: true, message: 'Stream stopped' };
+}
+
+// Initialize server and load config
+loadConfig();
+
+// Create HTTP server
+const server = http.createServer((req, res) => {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    res.writeHead(200);
+    res.end();
+    return;
+  }
+  
+  // Check API key for all requests except status check
+  if (!req.url.startsWith('/api/status')) {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || authHeader !== `Bearer ${API_KEY}`) {
+      res.writeHead(401, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, message: 'Unauthorized' }));
+      return;
+    }
+  }
+
+  // Parse URL and method
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const pathname = url.pathname;
+  
+  // Handle API requests
+  if (pathname.startsWith('/api/')) {
+    if (req.method === 'GET' && pathname === '/api/status') {
+      // Status endpoint
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, streaming: isStreaming, videoCount: playlist.length }));
+    } 
+    else if (req.method === 'GET' && pathname === '/api/playlist') {
+      // Get playlist
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, playlist }));
+    } 
+    else if (req.method === 'POST' && pathname === '/api/start') {
+      // Start stream
+      startStream().then(result => {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      });
+    } 
+    else if (req.method === 'POST' && pathname === '/api/stop') {
+      // Stop stream
+      const result = stopStream();
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(result));
+    } 
+    else if (req.method === 'POST' && pathname === '/api/config') {
+      // Update config
+      let body = '';
+      req.on('data', chunk => {
+        body += chunk.toString();
+      });
+      req.on('end', () => {
+        try {
+          const config = JSON.parse(body);
+          if (config.youtubeKey) {
+            YOUTUBE_STREAM_KEY = config.youtubeKey;
+            saveConfig();
+          }
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true, message: 'Configuration updated' }));
+        } catch (err) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: false, message: 'Invalid JSON' }));
+        }
+      });
+    } 
+    else if (req.method === 'POST' && pathname === '/api/video') {
+      // Add video
+      let body = '';
+      req.on('data', chunk => {
+        body += chunk.toString();
+      });
+      req.on('end', () => {
+        try {
+          const video = JSON.parse(body);
+          if (!video.name || !video.url) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: false, message: 'Name and URL required' }));
+            return;
+          }
+          playlist.push(video);
+          saveConfig();
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true, message: 'Video added', videoId: playlist.length - 1 }));
+        } catch (err) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: false, message: 'Invalid JSON' }));
+        }
+      });
+    } 
+    else if (req.method === 'DELETE' && pathname.startsWith('/api/video/')) {
+      // Delete video
+      const videoId = parseInt(pathname.split('/').pop());
+      if (isNaN(videoId) || videoId < 0 || videoId >= playlist.length) {
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, message: 'Video not found' }));
+        return;
+      }
+      
+      playlist.splice(videoId, 1);
+      saveConfig();
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, message: 'Video deleted' }));
+    } 
+    else {
+      // Unknown endpoint
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, message: 'Not found' }));
+    }
+  } else {
+    // Not an API request
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: false, message: 'Not found' }));
+  }
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
+  console.log(`API Key: ${API_KEY}`);
+});</pre>
+                        <button class="copy-btn bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-2 rounded" data-copy="const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const { spawn } = require('child_process');
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
+
+// Configuration
+const PORT = 3000;
+const API_KEY = 'change-this-to-a-random-string'; // Change this to a secure random string
+let YOUTUBE_STREAM_KEY = '';
+let streamProcess = null;
+let isStreaming = false;
+let playlist = [];
+let currentVideoIndex = 0;
+
+// Load saved configuration and playlist
+function loadConfig() {
+  try {
+    if (fs.existsSync('./config.json')) {
+      const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+      YOUTUBE_STREAM_KEY = config.youtubeKey || '';
+      playlist = config.playlist || [];
+    }
+  } catch (err) {
+    console.error('Error loading config:', err);
+  }
+}
+
+// Save configuration and playlist
+function saveConfig() {
+  try {
+    fs.writeFileSync('./config.json', JSON.stringify({
+      youtubeKey: YOUTUBE_STREAM_KEY,
+      playlist: playlist
+    }, null, 2));
+  } catch (err) {
+    console.error('Error saving config:', err);
+  }
+}
+
+// Function to start the stream
+async function startStream() {
+  if (isStreaming || !playlist.length) {
+    return { success: false, message: isStreaming ? 'Stream already running' : 'No videos in playlist' };
+  }
+
+  try {
+    // Create temp directory if it doesn't exist
+    if (!fs.existsSync('./temp')) {
+      fs.mkdirSync('./temp');
+    }
+
+    // Start stream process
+    console.log('Starting stream with YouTube key:', YOUTUBE_STREAM_KEY.substring(0, 3) + '***');
+    
+    // Prepare for streaming
+    isStreaming = true;
+    currentVideoIndex = 0;
+    streamNextVideo();
+    
+    return { success: true, message: 'Stream started' };
+  } catch (err) {
+    console.error('Error starting stream:', err);
+    isStreaming = false;
+    return { success: false, message: 'Error starting stream: ' + err.message };
+  }
+}
+
+// Function to stream the next video
+async function streamNextVideo() {
+  if (!isStreaming || !playlist.length) return;
+  
+  const video = playlist[currentVideoIndex];
+  console.log(`Streaming video ${currentVideoIndex + 1}/${playlist.length}: ${video.name}`);
+  
+  // Download the video if it doesn't exist locally
+  const videoFilename = path.join('./temp', `video_${currentVideoIndex}.mp4`);
+  if (!fs.existsSync(videoFilename)) {
+    console.log(`Downloading ${video.url} to ${videoFilename}`);
+    try {
+      await exec(`wget -O \"${videoFilename}\" \"${video.url}\"`);
+    } catch (err) {
+      console.error('Error downloading video:', err);
+      // Move to next video
+      currentVideoIndex = (currentVideoIndex + 1) % playlist.length;
+      streamNextVideo();
+      return;
+    }
+  }
+  
+  // Stream the video to YouTube
+  const ffmpegArgs = [
+    '-re',
+    '-i', videoFilename,
+    '-c:v', 'libx264',
+    '-preset', 'veryfast',
+    '-b:v', '3000k',
+    '-maxrate', '3000k',
+    '-bufsize', '6000k',
+    '-pix_fmt', 'yuv420p',
+    '-g', '50',
+    '-c:a', 'aac',
+    '-b:a', '128k',
+    '-ar', '44100',
+    '-f', 'flv',
+    `rtmp://a.rtmp.youtube.com/live2/${YOUTUBE_STREAM_KEY}`
+  ];
+  
+  streamProcess = spawn('ffmpeg', ffmpegArgs);
+  
+  streamProcess.stdout.on('data', (data) => {
+    console.log(`ffmpeg stdout: ${data}`);
+  });
+  
+  streamProcess.stderr.on('data', (data) => {
+    console.log(`ffmpeg stderr: ${data}`);
+  });
+  
+  streamProcess.on('close', (code) => {
+    console.log(`ffmpeg process closed with code ${code}`);
+    if (isStreaming) {
+      // Move to next video
+      currentVideoIndex = (currentVideoIndex + 1) % playlist.length;
+      streamNextVideo();
+    }
+  });
+}
+
+// Function to stop the stream
+function stopStream() {
+  if (!isStreaming) {
+    return { success: false, message: 'Stream not running' };
+  }
+  
+  if (streamProcess) {
+    streamProcess.kill('SIGTERM');
+    streamProcess = null;
+  }
+  
+  isStreaming = false;
+  return { success: true, message: 'Stream stopped' };
+}
+
+// Initialize server and load config
+loadConfig();
+
+// Create HTTP server
+const server = http.createServer((req, res) => {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    res.writeHead(200);
+    res.end();
+    return;
+  }
+  
+  // Check API key for all requests except status check
+  if (!req.url.startsWith('/api/status')) {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || authHeader !== `Bearer ${API_KEY}`) {
+      res.writeHead(401, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, message: 'Unauthorized' }));
+      return;
+    }
+  }
+
+  // Parse URL and method
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const pathname = url.pathname;
+  
+  // Handle API requests
+  if (pathname.startsWith('/api/')) {
+    if (req.method === 'GET' && pathname === '/api/status') {
+      // Status endpoint
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, streaming: isStreaming, videoCount: playlist.length }));
+    } 
+    else if (req.method === 'GET' && pathname === '/api/playlist') {
+      // Get playlist
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, playlist }));
+    } 
+    else if (req.method === 'POST' && pathname === '/api/start') {
+      // Start stream
+      startStream().then(result => {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      });
+    } 
+    else if (req.method === 'POST' && pathname === '/api/stop') {
+      // Stop stream
+      const result = stopStream();
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(result));
+    } 
+    else if (req.method === 'POST' && pathname === '/api/config') {
+      // Update config
+      let body = '';
+      req.on('data', chunk => {
+        body += chunk.toString();
+      });
+      req.on('end', () => {
+        try {
+          const config = JSON.parse(body);
+          if (config.youtubeKey) {
+            YOUTUBE_STREAM_KEY = config.youtubeKey;
+            saveConfig();
+          }
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true, message: 'Configuration updated' }));
+        } catch (err) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: false, message: 'Invalid JSON' }));
+        }
+      });
+    } 
+    else if (req.method === 'POST' && pathname === '/api/video') {
+      // Add video
+      let body = '';
+      req.on('data', chunk => {
+        body += chunk.toString();
+      });
+      req.on('end', () => {
+        try {
+          const video = JSON.parse(body);
+          if (!video.name || !video.url) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: false, message: 'Name and URL required' }));
+            return;
+          }
+          playlist.push(video);
+          saveConfig();
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true, message: 'Video added', videoId: playlist.length - 1 }));
+        } catch (err) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: false, message: 'Invalid JSON' }));
+        }
+      });
+    } 
+    else if (req.method === 'DELETE' && pathname.startsWith('/api/video/')) {
+      // Delete video
+      const videoId = parseInt(pathname.split('/').pop());
+      if (isNaN(videoId) || videoId < 0 || videoId >= playlist.length) {
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, message: 'Video not found' }));
+        return;
+      }
+      
+      playlist.splice(videoId, 1);
+      saveConfig();
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, message: 'Video deleted' }));
+    } 
+    else {
+      // Unknown endpoint
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, message: 'Not found' }));
+    }
+  } else {
+    // Not an API request
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: false, message: 'Not found' }));
+  }
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
+  console.log(`API Key: ${API_KEY}`);
+});"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 3: Create the PM2 Configuration</h3>
+                    <p class="mb-2">PM2 will keep the server running even if the SSH session closes:</p>
+                    <p>First, install PM2:</p>
+                    <div class="relative">
+                        <pre class="mb-4">sudo npm install -g pm2</pre>
+                        <button class="copy-btn bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-2 rounded" data-copy="sudo npm install -g pm2"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p>Create a PM2 ecosystem file:</p>
+                    <p class="text-sm font-medium mb-1">Run: <code>nano ecosystem.config.js</code></p>
+                    <div class="relative">
+                        <pre class="mb-4">module.exports = {
+  apps : [{
+    name: "youtube-streamer",
+    script: "server.js",
+    watch: false,
+    autorestart: true,
+    env: {
+      NODE_ENV: "production",
+    }
+  }]
+}</pre>
+                        <button class="copy-btn bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-2 rounded" data-copy="module.exports = {
+  apps : [{
+    name: \"youtube-streamer\",
+    script: \"server.js\",
+    watch: false,
+    autorestart: true,
+    env: {
+      NODE_ENV: \"production\",
+    }
+  }]
+}"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 4: Configure the Firewall</h3>
+                    <p class="mb-2">Allow traffic to the server port:</p>
+                    <div class="relative">
+                        <pre class="mb-4">sudo firewall-cmd --permanent --add-port=3000/tcp
+sudo firewall-cmd --reload</pre>
+                        <button class="copy-btn bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-2 rounded" data-copy="sudo firewall-cmd --permanent --add-port=3000/tcp
+sudo firewall-cmd --reload"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Step 5: Start the Server</h3>
+                    <p class="mb-2">Start the server with PM2:</p>
+                    <div class="relative">
+                        <pre class="mb-4">cd ~/youtube-streamer
+pm2 start ecosystem.config.js
+pm2 save
+pm2 startup</pre>
+                        <button class="copy-btn bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-2 rounded" data-copy="cd ~/youtube-streamer
+pm2 start ecosystem.config.js
+pm2 save
+pm2 startup"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p>This will start the server and configure it to restart automatically if the server reboots.</p>
+                </div>
+                
+                <div class="step-container mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Important Security Note</h3>
+                    <p class="mb-2">In the <code>server.js</code> file, make sure to change the <code>API_KEY</code> value from <code>'change-this-to-a-random-string'</code> to a secure random string. This is the key you'll use to authenticate with the control panel.</p>
+                    <p>You can generate a random string with this command:</p>
+                    <div class="relative">
+                        <pre class="mb-4">openssl rand -hex 16</pre>
+                        <button class="copy-btn bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-2 rounded" data-copy="openssl rand -hex 16"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <p class="mb-4">Once your server is running, go back to the Control Panel tab and configure it with your server's IP address and API key.</p>
+                    <button onclick="changeTab('control')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Control Panel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white shadow-md rounded-lg p-6 mt-8 text-center">
+        <p class="text-gray-600">24/7 YouTube Streaming Solution</p>
+        <p class="text-gray-500 text-sm mt-2">This solution is provided for educational purposes. Use responsibly and in compliance with YouTube's Terms of Service.</p>
+    </footer>
+
+    <script>
+        // Tab functionality
+        function changeTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if (btn.dataset.tab === tabId) {
+                    btn.classList.remove('bg-gray-100', 'text-gray-800');
+                    btn.classList.add('bg-blue-500', 'text-white');
+                } else {
+                    btn.classList.remove('bg-blue-500', 'text-white');
+                    btn.classList.add('bg-gray-100', 'text-gray-800');
+                }
+            });
+        }
+        
+        // Initialize event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up tab switching
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    changeTab(btn.dataset.tab);
+                });
+            });
+            
+            // Set up copy buttons
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const textToCopy = btn.dataset.copy;
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<i class="fas fa-check"></i>';
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                        }, 2000);
+                    });
+                });
+            });
+            
+            // Control panel functionality
+            const configForm = document.getElementById('config-form');
+            const addVideoForm = document.getElementById('add-video-form');
+            const startStreamBtn = document.getElementById('start-stream-btn');
+            const stopStreamBtn = document.getElementById('stop-stream-btn');
+            const checkStatusBtn = document.getElementById('check-status-btn');
+            
+            // Load saved configuration
+            const savedConfig = localStorage.getItem('streamer-config');
+            if (savedConfig) {
+                const config = JSON.parse(savedConfig);
+                document.getElementById('server-ip').value = config.serverIp || '';
+                document.getElementById('api-key').value = config.apiKey || '';
+                document.getElementById('youtube-key').value = config.youtubeKey || '';
+            }
+            
+            // Save configuration
+            configForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const serverIp = document.getElementById('server-ip').value;
+                const apiKey = document.getElementById('api-key').value;
+                const youtubeKey = document.getElementById('youtube-key').value;
+                
+                // Save to local storage
+                localStorage.setItem('streamer-config', JSON.stringify({
+                    serverIp, apiKey, youtubeKey
+                }));
+                
+                // Update server config
+                if (serverIp && apiKey && youtubeKey) {
+                    fetch(`http://${serverIp}:3000/api/config`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${apiKey}`
+                        },
+                        body: JSON.stringify({ youtubeKey })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message || 'Configuration saved successfully!');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Failed to save configuration to server. Make sure your server is running and accessible.');
+                    });
+                } else {
+                    alert('Configuration saved locally. Server configuration will be updated when all fields are filled.');
+                }
+            });
+            
+            // Add video
+            addVideoForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('video-name').value;
+                const url = document.getElementById('video-url').value;
+                const config = JSON.parse(localStorage.getItem('streamer-config') || '{}');
+                
+                if (!name || !url) {
+                    alert('Please enter both video name and URL');
+                    return;
+                }
+                
+                if (!config.serverIp || !config.apiKey) {
+                    alert('Please configure server IP and API key first');
+                    return;
+                }
+                
+                fetch(`http://${config.serverIp}:3000/api/video`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${config.apiKey}`
+                    },
+                    body: JSON.stringify({ name, url })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Video added successfully!');
+                        document.getElementById('video-name').value = '';
+                        document.getElementById('video-url').value = '';
+                        loadPlaylist();
+                    } else {
+                        alert('Failed to add video: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to add video. Make sure your server is running and accessible.');
+                });
+            });
+            
+            // Start stream
+            startStreamBtn.addEventListener('click', function() {
+                const config = JSON.parse(localStorage.getItem('streamer-config') || '{}');
+                
+                if (!config.serverIp || !config.apiKey) {
+                    alert('Please configure server IP and API key first');
+                    return;
+                }
+                
+                fetch(`http://${config.serverIp}:3000/api/start`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${config.apiKey}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.success) {
+                        document.getElementById('stream-status-indicator').classList.remove('bg-red-500');
+                        document.getElementById('stream-status-indicator').classList.add('bg-green-500');
+                        document.getElementById('stream-status').textContent = 'Streaming';
+                        startStreamBtn.disabled = true;
+                        stopStreamBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to start stream. Make sure your server is running and accessible.');
+                });
+            });
+            
+            // Stop stream
+            stopStreamBtn.addEventListener('click', function() {
+                const config = JSON.parse(localStorage.getItem('streamer-config') || '{}');
+                
+                if (!config.serverIp || !config.apiKey) {
+                    alert('Please configure server IP and API key first');
+                    return;
+                }
+                
+                fetch(`http://${config.serverIp}:3000/api/stop`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${config.apiKey}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.success) {
+                        document.getElementById('stream-status-indicator').classList.remove('bg-green-500');
+                        document.getElementById('stream-status-indicator').classList.add('bg-red-500');
+                        document.getElementById('stream-status').textContent = 'Not streaming';
+                        startStreamBtn.disabled = false;
+                        stopStreamBtn.disabled = true;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to stop stream. Make sure your server is running and accessible.');
+                });
+            });
+            
+            // Check status
+            checkStatusBtn.addEventListener('click', function() {
+                checkStatus();
+                loadPlaylist();
+            });
+            
+            // Function to check server status
+            function checkStatus() {
+                const config = JSON.parse(localStorage.getItem('streamer-config') || '{}');
+                
+                if (!config.serverIp) {
+                    document.getElementById('stream-status').textContent = 'Server not configured';
+                    return;
+                }
+                
+                fetch(`http://${config.serverIp}:3000/api/status`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        if (data.streaming) {
+                            document.getElementById('stream-status-indicator').classList.remove('bg-red-500');
+                            document.getElementById('stream-status-indicator').classList.add('bg-green-500');
+                            document.getElementById('stream-status').textContent = 'Streaming';
+                            startStreamBtn.disabled = true;
+                            stopStreamBtn.disabled = false;
+                        } else {
+                            document.getElementById('stream-status-indicator').classList.remove('bg-green-500');
+                            document.getElementById('stream-status-indicator').classList.add('bg-red-500');
+                            document.getElementById('stream-status').textContent = 'Not streaming';
+                            startStreamBtn.disabled = false;
+                            stopStreamBtn.disabled = true;
+                        }
+                    } else {
+                        document.getElementById('stream-status').textContent = 'Error: ' + data.message;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('stream-status').textContent = 'Server not reachable';
+                });
+            }
+            
+            // Function to load playlist
+            function loadPlaylist() {
+                const config = JSON.parse(localStorage.getItem('streamer-config') || '{}');
+                
+                if (!config.serverIp || !config.apiKey) {
+                    return;
+                }
+                
+                fetch(`http://${config.serverIp}:3000/api/playlist`, {
+                    headers: {
+                        'Authorization': `Bearer ${config.apiKey}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && data.playlist) {
+                        const videoList = document.getElementById('video-list');
+                        videoList.innerHTML = '';
+                        
+                        if (data.playlist.length === 0) {
+                            videoList.innerHTML = '<tr><td colspan="3" class="py-4 px-6 border-b border-gray-200 text-center">No videos added yet</td></tr>';
+                            return;
+                        }
+                        
+                        data.playlist.forEach((video, index) => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td class="py-2 px-4 border-b border-gray-200">${video.name}</td>
+                                <td class="py-2 px-4 border-b border-gray-200 truncate max-w-xs">${video.url}</td>
+                                <td class="py-2 px-4 border-b border-gray-200">
+                                    <button class="delete-video bg-red-500 hover:bg-red-600 text-white text-xs py-1 px-2 rounded" data-id="${index}">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            `;
+                            videoList.appendChild(row);
+                        });
+                        
+                        // Add delete event listeners
+                        document.querySelectorAll('.delete-video').forEach(btn => {
+                            btn.addEventListener('click', function() {
+                                deleteVideo(btn.dataset.id);
+                            });
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+            
+            // Function to delete video
+            function deleteVideo(videoId) {
+                const config = JSON.parse(localStorage.getItem('streamer-config') || '{}');
+                
+                if (!config.serverIp || !config.apiKey) {
+                    alert('Please configure server IP and API key first');
+                    return;
+                }
+                
+                if (!confirm('Are you sure you want to delete this video?')) {
+                    return;
+                }
+                
+                fetch(`http://${config.serverIp}:3000/api/video/${videoId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${config.apiKey}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Video deleted successfully!');
+                        loadPlaylist();
+                    } else {
+                        alert('Failed to delete video: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to delete video. Make sure your server is running and accessible.');
+                });
+            }
+            
+            // Initial status check
+            checkStatus();
+            loadPlaylist();
+        });
+    </script>
+</body>
+</html>
